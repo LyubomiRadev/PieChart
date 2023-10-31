@@ -6,7 +6,26 @@
         xmlns:views="clr-namespace:AvaloniaApplication1.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaApplication1.Views.MainWindow"
+        xmlns:oxy="using:OxyPlot.Avalonia"
         Icon="/Assets/avalonia-logo.ico"
         Title="AvaloniaApplication1">
         <views:MainView />
+
+    <oxy:Plot>
+        <oxy:Plot.Series>
+            <oxy:PieSeries
+                InnerDiameter="0.2"
+                ExplodedDistance="0"
+                Stroke="Black"
+                StrokeThickness="1"
+                StartAngle="0"
+                AngleSpan="360"
+                ItemsSource="{Binding Continents}"
+                LabelField="Name"
+                ValueField="PopulationInMillions"
+                IsExplodedField="IsExploded"
+                Foreground="BlueViolet"/>
+        </oxy:Plot.Series>
+    </oxy:Plot>
+    
 </Window>
