@@ -36,8 +36,8 @@ public partial class MainWindow : Window
 			new ContinentItem { Name = "Oceania", PopulationInMillions = 35, IsExploded = true }
 		};
 
-		//this.PieModel = plotModel;
-		//this.DataContext = new { PieModel, Continents };
+		this.PieModel = plotModel;
+		this.DataContext = new { PieModel, Continents };
 	}
 
 	private void InitializeComponent()

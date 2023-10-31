@@ -15,21 +15,33 @@
         Title="AvaloniaApplication1"
         Background="White">
 
-    <oxy:Plot Title="World population by continent">
-        <oxy:Plot.Series>
-            <oxy:PieSeries
-                InnerDiameter="0.2"
-                ExplodedDistance="0"
-                Stroke="Black"
-                StrokeThickness="1"
-                StartAngle="0"
-                AngleSpan="360"
-                ItemsSource="{Binding Continents}"
-                LabelField="Name"
-                ValueField="PopulationInMillions"
-                IsExplodedField="IsExploded"
-                Foreground="BlueViolet"/>
-        </oxy:Plot.Series>
-    </oxy:Plot>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <oxy:PlotView Grid.Row="0"
+                      Model="{Binding PieModel}"/>
+        
+        <oxy:Plot Grid.Row="1"
+            Title="World population by continent">
+            <oxy:Plot.Series>
+                <oxy:PieSeries
+                    InnerDiameter="0.2"
+                    ExplodedDistance="0"
+                    Stroke="Black"
+                    StrokeThickness="1"
+                    StartAngle="0"
+                    AngleSpan="360"
+                    ItemsSource="{Binding Continents}"
+                    LabelField="Name"
+                    ValueField="PopulationInMillions"
+                    IsExplodedField="IsExploded"
+                    Foreground="BlueViolet"/>
+            </oxy:Plot.Series>
+        </oxy:Plot>
+        
+    </Grid>
 
 </Window>
