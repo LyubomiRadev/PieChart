@@ -21,8 +21,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!--<oxy:PlotView Grid.Row="0"
-                      Model="{Binding PieModel}"/>-->
+        <oxy:PlotView Grid.Row="0"
+                      Model="{Binding PieModel}"/>
         
         <oxy:Plot Grid.Row="1"
             Title="Testing Pie Chart">
