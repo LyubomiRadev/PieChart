@@ -18,14 +18,14 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <oxy:PlotView Grid.Row="0"
-                      Model="{Binding PieModel}"/>
+        <!--<oxy:PlotView Grid.Row="0"
+                      Model="{Binding PieModel}"/>-->
         
         <oxy:Plot Grid.Row="1"
-            Title="World population by continent">
+            Title="Testing Pie Chart">
             <oxy:Plot.Series>
                 <oxy:PieSeries
                     InnerDiameter="0.2"
