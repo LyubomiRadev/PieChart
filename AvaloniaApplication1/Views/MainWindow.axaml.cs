@@ -27,15 +27,17 @@ public partial class MainWindow : Window
 		pieSeries.StartAngle = 0;
 		plotModel.Series.Add(pieSeries);
 
-		Continents = new ObservableCollection<ContinentItem>();
-		Continents.Add(new ContinentItem { Name = "Africa", PopulationInMillions = 1030, IsExploded = true });
-		Continents.Add(new ContinentItem { Name = "Americas", PopulationInMillions = 929, IsExploded = true });
-		Continents.Add(new ContinentItem { Name = "Asia", PopulationInMillions = 4157 });
-		Continents.Add(new ContinentItem { Name = "Europe", PopulationInMillions = 739, IsExploded = true });
-		Continents.Add(new ContinentItem { Name = "Oceania", PopulationInMillions = 35, IsExploded = true });
+		Continents = new ObservableCollection<ContinentItem>
+		{
+			new ContinentItem { Name = "Africa", PopulationInMillions = 1030, IsExploded = true },
+			new ContinentItem { Name = "Americas", PopulationInMillions = 929, IsExploded = true },
+			new ContinentItem { Name = "Asia", PopulationInMillions = 4157 },
+			new ContinentItem { Name = "Europe", PopulationInMillions = 739, IsExploded = true },
+			new ContinentItem { Name = "Oceania", PopulationInMillions = 35, IsExploded = true }
+		};
 
-		this.PieModel = plotModel;
-		this.DataContext = new { PieModel, Continents };
+		//this.PieModel = plotModel;
+		//this.DataContext = new { PieModel, Continents };
 	}
 
 	private void InitializeComponent()
@@ -50,7 +52,7 @@ public partial class MainWindow : Window
 
 public class ContinentItem
 {
-	public string Name { get; set; }
+	public string? Name { get; set; }
 
 	public double PopulationInMillions { get; set; }
 
